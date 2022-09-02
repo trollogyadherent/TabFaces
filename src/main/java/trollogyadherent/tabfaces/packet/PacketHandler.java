@@ -3,7 +3,6 @@ package trollogyadherent.tabfaces.packet;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import cpw.mods.fml.relauncher.Side;
-import trollogyadherent.tabfaces.packet.packets.PushAllSkinDataToClient;
 import trollogyadherent.tabfaces.packet.packets.PushSkinbytesToClientPacket;
 
 public class PacketHandler {
@@ -13,7 +12,7 @@ public class PacketHandler {
     {
         net = NetworkRegistry.INSTANCE.newSimpleChannel("tabfaces".toUpperCase());
         registerMessage(PushSkinbytesToClientPacket.class, PushSkinbytesToClientPacket.SimpleMessage.class);
-        registerMessage(PushAllSkinDataToClient.class, PushAllSkinDataToClient.SimpleMessage.class);
+        //registerMessage(PushAllSkinDataToClient.class, PushAllSkinDataToClient.SimpleMessage.class);
     }
 
     private static int nextPacketId = 0;

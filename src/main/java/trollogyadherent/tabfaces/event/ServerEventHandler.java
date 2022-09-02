@@ -93,8 +93,13 @@ public class ServerEventHandler {
         DownloadThread dt = new DownloadThread();
         dt.start(skinUrl, e.player.getDisplayName());
 
-        IMessage msg = new PushAllSkinDataToClient.SimpleMessage(TabFaces.varInstanceServer.serverRegistry.getAllDataAsBytes());
-        PacketHandler.net.sendTo(msg, (EntityPlayerMP) e.player);
+        //IMessage msg = new PushAllSkinDataToClient.SimpleMessage(TabFaces.varInstanceServer.serverRegistry.getAllDataAsBytes());
+        //PacketHandler.net.sendTo(msg, (EntityPlayerMP) e.player);
+
+        for (String displayName : TabFaces.varInstanceServer.serverRegistry.getAllUsernames()) {
+            IMessage msg = new PushSkinbytesToClientPacket.SimpleMessage(e.player.getDisplayName(), TabFaces.varInstanceServer.serverRegistry.getDataByDisplayName(displayName).getSkinBytes());
+            PacketHandler.net.sendTo(msg, (EntityPlayerMP) e.player);
+        }
     }
 
     @SubscribeEvent

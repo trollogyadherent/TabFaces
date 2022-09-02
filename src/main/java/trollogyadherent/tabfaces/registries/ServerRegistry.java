@@ -14,7 +14,7 @@ public class ServerRegistry {
         this.dataList = new ArrayList<>();
     }
 
-    private class Data {
+    public class Data {
         String displayName;
         byte[] skinBytes;
 
@@ -22,9 +22,17 @@ public class ServerRegistry {
             this.displayName = displayName;
             this.skinBytes = skinBytes;
         }
+
+        public String getDisplayName() {
+            return displayName;
+        }
+
+        public byte[] getSkinBytes() {
+            return skinBytes;
+        }
     }
 
-    Data getDataByDisplayName(String displayName) {
+    public Data getDataByDisplayName(String displayName) {
         for (Data data : this.dataList) {
             if (data.displayName.equals(displayName)) {
                 return data;
@@ -48,6 +56,15 @@ public class ServerRegistry {
         }
     }
 
+    public String[] getAllUsernames() {
+        String[] res = new String[dataList.size()];
+        for (int i = 0; i < dataList.size(); i ++) {
+            res[i] = dataList.get(i).displayName;
+        }
+        return res;
+    }
+
+    /* Too big to be sent over a forge packet at once */
     public byte[] getAllDataAsBytes() {
         /* Structure: |4 bytes: number of elements|4 bytes: len of displayname|displayname|4 bytes: len of skin|skin| ... |...|*/
         byte[] res = new byte[0];
