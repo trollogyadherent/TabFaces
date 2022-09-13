@@ -32,4 +32,5 @@ It's free real estate. Do it (for free).
 * [FalsePattern](https://github.com/FalsePattern), [SinTh0r4s](https://github.com/SinTh0r4s), [basdxz](https://github.com/basdxz), and [TheElan](https://github.com/TheElan) for their [ExampleMod 1.7.10](https://github.com/FalsePattern/ExampleMod1.7.10) and the included gradle buildscript.
 
 ## Buy me a coffee
-[ko-fi.com/jackisasubtlejoke](https://ko-fi.com/jackisasubtlejoke)
+* [ko-fi.com/jackisasubtlejoke](https://ko-fi.com/jackisasubtlejoke)
+* Monero: `86aNAyad1scfNpiZ9DM7rMPsM3gbQHBhqPefbgfPunyBiGAaaTH3SvWB66HRjRMNJj9Yu7tHizYej3E7V7BEVkmNMWpWC5f`
